@@ -1,0 +1,8 @@
+// src/styles/main.scss
+
+// 1. Abstracts (Stellen Werkzeuge bereit, erzeugen selbst kein CSS)
+@use 'abstracts/variables';
+
+// 2. Base & Vendor
+@use 'base/reset.scss';
+@use 'base/typography.scss'

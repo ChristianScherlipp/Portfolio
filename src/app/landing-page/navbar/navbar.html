@@ -1,1 +1,16 @@
-<p>navbar works!</p>
+<section class="navbar">
+    <section class="navbar-logo-text">
+        <img src="/assets/icons/logo_chris.svg" alt="Log inizialien von Christian Scherlipp auf  Platine">
+        <p>Chris<span>tian</span></p>
+    </section>
+    <Section class="navbar-link">
+        <a href="">{{ languageService.translations().navbar.aboutMe }}</a>
+        <a href="">{{ languageService.translations().navbar.skills }}</a>
+        <a href="">{{ languageService.translations().navbar.myProjects }}</a>
+        <a href="">{{ languageService.translations().navbar.contact }}</a>
+    </Section>
+    <section class="navbar-select-language">
+        <button [class.active]="languageService.currentLanguage() === 'de'" (click)="changeLanguage('de')">DE</button>
+        <button [class.active]="languageService.currentLanguage() === 'en'" (click)="changeLanguage('en')">EN</button>
+    </section>
+</section>
