@@ -9,6 +9,12 @@ export interface Translations {
     myProjects: string;
     contact: string;
   };
+  hero: {
+    iAm: string;
+    role: string;
+    tagline: string;
+    talkButton: string;
+  };
 }
 
 const TRANSLATIONS: Record<Language, Translations> = {
@@ -19,6 +25,12 @@ const TRANSLATIONS: Record<Language, Translations> = {
       myProjects: 'Projects',
       contact: 'Contact',
     },
+    hero: {
+      iAm: 'I AM',
+      role: 'FULLSTACK DEVELOPER',
+      tagline: 'Turning ideas into interactive web experiences.',
+      talkButton: "Let's talk!",
+    },
   },
   de: {
     navbar: {
@@ -26,6 +38,12 @@ const TRANSLATIONS: Record<Language, Translations> = {
       skills: 'Kenntnisse',
       myProjects: 'Projekte',
       contact: 'Kontakt',
+    },
+    hero: {
+      iAm: 'ICH BIN',
+      role: 'FULLSTACK DEVELOPER',
+      tagline: 'Ich verwandle Ideen in interaktive Web-Erlebnisse um.',
+      talkButton: 'Lass uns reden!',
     },
   },
 };

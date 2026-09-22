@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../shared/language';
 
 @Component({
   imports: [],
@@ -6,4 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './hero.scss',
   templateUrl: './hero.html',
 })
-export class Hero {}
+export class Hero {
+  languageService = inject(LanguageService);
+}
