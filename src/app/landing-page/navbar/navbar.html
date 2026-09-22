@@ -10,6 +10,7 @@
         <a href="">{{ languageService.translations().navbar.contact }}</a>
     </Section>
     <section class="navbar-select-language">
+        <span class="navbar-select-language_slider" [class.navbar-select-language_slider--en]="languageService.currentLanguage() === 'en'"></span>
         <button [class.active]="languageService.currentLanguage() === 'de'" (click)="changeLanguage('de')">DE</button>
         <button [class.active]="languageService.currentLanguage() === 'en'" (click)="changeLanguage('en')">EN</button>
     </section>
