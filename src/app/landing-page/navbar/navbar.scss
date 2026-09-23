@@ -13,7 +13,8 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    background: transparent;
+    background: var.$basic-bg-color;
+    z-index: 10;
 
     @include mix.respond-below(900px) {
         justify-content: center;
