@@ -1,21 +1,31 @@
 <section class="hero">
     <span class="light-sphere light-sphere--blue" aria-hidden="true"></span>
     <span class="light-sphere light-sphere--sand" aria-hidden="true"></span>
-    <section class="hero-statment">
-        <div class="centered-line hero-statment--far">
-            <p>{{ languageService.translations().hero.iAm }}</p>
-        </div>
-        <h1 class="hero-statment_headline">Christian <span>Scherlipp</span></h1>
-        <p class="hero-statment--far">{{ languageService.translations().hero.role }}</p>
-        <p class="hero-statment--article">{{ languageService.translations().hero.tagline }}</p>
-        <button>{{ languageService.translations().hero.talkButton }}</button>
-        <div class="link-icon">
-            <a href="https://github.com/ChristianScherlipp" target="_blank" rel="noopener"><img src="/assets/icons/github.svg" alt="Github Icon"></a>
-            <a href=""><img src="/assets/icons/mail.svg" alt="Email Icon"></a>
-            <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener"><img src="/assets/icons/linkedin.svg" alt="LinkedIn Icon"></a>
-        </div>
-    </section>
-    <section class="hero-image">
-        <img src="/assets/img/chris-portfolio.webp" alt="Bild von Christian Scherlipp">
+    <section class="hero-content">
+        <section class="hero-statment">
+            <div class="centered-line hero-statment--far">
+                <p>{{ languageService.translations().hero.iAm }}</p>
+            </div>
+            <h1 class="hero-statment_headline">Christian <span>Scherlipp</span></h1>
+            <p class="hero-statment--far">{{ languageService.translations().hero.role }}</p>
+            <p class="hero-statment--article">{{ languageService.translations().hero.tagline }}</p>
+            <button class="cta-button">{{ languageService.translations().hero.talkButton }}</button>
+            <div class="link-icon">
+                <a href="https://github.com/ChristianScherlipp" target="_blank" rel="noopener"><img src="/assets/icons/github.svg" alt="Github Icon"></a>
+                <a href=""><img src="/assets/icons/mail.svg" alt="Email Icon"></a>
+                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener"><img src="/assets/icons/linkedin.svg" alt="LinkedIn Icon"></a>
+            </div>
+        </section>
+        <svg class="hero-curve" viewBox="0 0 1440 700" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M 520 650 A 440 390 0 0 1 960 260" />
+        </svg>
+        <section class="hero-image">
+            <img src="/assets/img/chris-portfolio.webp" alt="Bild von Christian Scherlipp">
+        </section>
+        <button class="scroll-indicator" type="button" (click)="scrollToNext()">
+            <span class="scroll-indicator_line"></span>
+            <span class="scroll-indicator_text">SCROLL DOWN</span>
+            <span class="scroll-indicator_arrow"><img src="/assets/icons/arrow-down.svg" alt="Arrow Down"></span>
+        </button>
     </section>
 </section>

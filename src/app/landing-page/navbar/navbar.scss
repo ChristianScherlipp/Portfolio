@@ -2,14 +2,17 @@
 @use 'abstracts/_mixins' as mix;
 
 .navbar {
+    position: sticky;
+    top: 0;
     width: 100%;
-    height: 4rem;
+    max-width: 1440px;
+    margin-inline: auto;
+    height: var.$navbar-height;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    padding: 10px mix.fluid(16, 40);
     background: transparent;
 
     @include mix.respond-below(900px) {

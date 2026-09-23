@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, inject } from '@angular/core';
 import { LanguageService } from '../../shared/language';
 
 @Component({
@@ -9,4 +9,15 @@ import { LanguageService } from '../../shared/language';
 })
 export class Hero {
   languageService = inject(LanguageService);
+  private hostElement = inject(ElementRef<HTMLElement>);
+
+  scrollToNext(): void {
+    const nextSection = this.hostElement.nativeElement.nextElementSibling as HTMLElement | null;
+
+    if (nextSection) {
+      nextSection.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }else {
+      window.scrollBy({ top: window.innerHeight, behavior: 'smooth'});
+    }
+  }
 }
