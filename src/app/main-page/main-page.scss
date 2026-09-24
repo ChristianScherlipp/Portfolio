@@ -1,3 +1,5 @@
+@use 'abstracts/variables' as var;
+
 .main-content {
     width: 1440px;
     margin-inline: auto;
@@ -7,4 +9,5 @@
 
 .about-me {
     height: 30rem;
+    scroll-margin-top: var.$navbar-height;
 }

@@ -2,6 +2,7 @@
 
 // 1. Abstracts (Stellen Werkzeuge bereit, erzeugen selbst kein CSS)
 @use 'abstracts/variables';
+@use 'abstracts/mixins';
 
 // 2. Base & Vendor
 @use 'base/reset.scss';
