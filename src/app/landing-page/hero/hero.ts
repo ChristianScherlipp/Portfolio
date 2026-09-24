@@ -1,14 +1,13 @@
 import { Component, ElementRef, inject } from '@angular/core';
-import { LanguageService } from '../../shared/language';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  imports: [],
+  imports: [TranslatePipe],
   selector: 'app-hero',
   styleUrl: './hero.scss',
   templateUrl: './hero.html',
 })
 export class Hero {
-  languageService = inject(LanguageService);
   private hostElement = inject(ElementRef<HTMLElement>);
 
   scrollToNext(): void {

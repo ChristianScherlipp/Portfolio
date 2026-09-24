@@ -67,8 +67,8 @@
     }
 
     &_picture > img {
-        width: 4.5rem;
-        height: 4.5rem;
+        width: 3rem;
+        height: 3rem;
         filter: brightness(0) invert(80%) sepia(15%) saturate(375%)hue-rotate(349deg) brightness(103%) contrast(79%);
     }
 }

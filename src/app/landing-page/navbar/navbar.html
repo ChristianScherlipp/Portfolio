@@ -1,17 +1,17 @@
 <section class="navbar">
     <section class="navbar-logo-text">
-        <img src="/assets/icons/logo_chris_header.svg" alt="Log inizialien von Christian Scherlipp auf  Platine">
+        <img src="/assets/icons/logo_chris_header.svg" alt="Logo inizialien von Christian Scherlipp auf Platine">
         <p>Chris<span>tian</span></p>
     </section>
     <Section class="navbar-link">
-        <a href="">{{ languageService.translations().navbar.aboutMe }}</a>
-        <a href="">{{ languageService.translations().navbar.skills }}</a>
-        <a href="">{{ languageService.translations().navbar.myProjects }}</a>
-        <a href="">{{ languageService.translations().navbar.contact }}</a>
+        <a href="">{{ 'navbar.aboutMe' | translate }}</a>
+        <a href="">{{ 'navbar.skills' | translate}}</a>
+        <a href="">{{ 'navbar.myProjects' |translate }}</a>
+        <a href="">{{ 'navbar.contact' | translate}}</a>
     </Section>
     <section class="navbar-select-language">
-        <span class="navbar-select-language_slider" [class.navbar-select-language_slider--en]="languageService.currentLanguage() === 'en'"></span>
-        <button [class.active]="languageService.currentLanguage() === 'de'" (click)="changeLanguage('de')">DE</button>
-        <button [class.active]="languageService.currentLanguage() === 'en'" (click)="changeLanguage('en')">EN</button>
+        <span class="navbar-select-language_slider" [class.navbar-select-language_slider--en]="translate.currentLang() === 'en'"></span>
+        <button [class.active]="translate.currentLang() === 'de'" (click)="changeLanguage('de')">DE</button>
+        <button [class.active]="translate.currentLang() === 'en'" (click)="changeLanguage('en')">EN</button>
     </section>
 </section>

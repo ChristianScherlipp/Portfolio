@@ -1,0 +1,14 @@
+{
+    "navbar": {
+        "aboutMe": "About me",
+        "skills": "Skills",
+        "myProjects": "Projects",
+        "contact": "Contact"
+    },
+    "hero": {
+        "iAm": "I AM",
+        "role": "FULLSTACK DEVELOPER",
+        "tagline": "Turning ideas into interactive web experiences.",
+        "talkButton": "Let's talk!"
+    }
+}

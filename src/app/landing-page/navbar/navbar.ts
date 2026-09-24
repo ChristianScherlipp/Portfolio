@@ -1,16 +1,17 @@
 import { Component, inject } from '@angular/core';
-import { Language, LanguageService } from '../../shared/language';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+
 
 @Component({
-  imports: [],
+  imports: [TranslatePipe],
   selector: 'app-navbar',
   styleUrl: './navbar.scss',
   templateUrl: './navbar.html',
 })
 export class Navbar {
-  languageService = inject(LanguageService);
+  translate = inject(TranslateService);
 
-  changeLanguage(language: Language) {
-    this.languageService.changeLanguage(language);
+  changeLanguage(language: 'de' | 'en') {
+    this.translate.use(language);
   }
 }
