@@ -10,5 +10,16 @@
         "role": "FULLSTACK DEVELOPER",
         "tagline": "Ich verwandle Ideen in interaktive Web-Erlebnisse um.",
         "talkButton": "Lass uns reden!"
+    },
+    "aboutMe": {
+        "title_part_one" : "Über ",
+        "title_part_two" : "Mich",
+        "firstTagLine" : "Hallo! Ich bin Chris! Ich bin ein leidenschaftlicher Full-Stack-Entwickler, der es liebt, moderne und benutzerfreundliche Webanwendungen zu entwickeln. Es macht mir Spaß, Ideen in interaktive Erlebnisse zu verwandeln. Ich bin stets bestrebt, neue Technologien zu erlernen.",
+        "moreAboutMeButton" : "Mehr über mich",
+        "pathTagLine" : "Mein Weg hierher war nicht typisch: Ich begann als Maurer und arbeitete einige Jahre in diesem Beruf, bevor ich in die Industrie wechselte. Ein Arbeitsunfall f\u00fchrte mich zur Programmierung und veranlasste mich dazu, eine Umschulung zu beginnen \u2014 r\u00fcckblickend genau der richtige n\u00e4chste Schritt für mich.",
+        "hobbyTagLine" : "Neben dem Programmieren fasziniert mich das Zocken schon seit ich ein kleiner Junge war, und das ist bis heute so geblieben. Das Programmieren-Lernen kam nach meinem Unfall als neues Kapitel dazu, das Zocken war die ganze Zeit \u00fcber eine Konstante.", 
+        "location" : "Offen für neue Möglichkeiten <br> Remote oder vor Ort",
+        "ideas" : "Stets auf der Suche nach <br> Neuen Technologien und besseren Lösungen",
+        "teamPlayer" : "Teamplayer <br> Zusammenarbeit & kreative Ideen"
     }
 }

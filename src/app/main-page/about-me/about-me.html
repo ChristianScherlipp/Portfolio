@@ -1,11 +1,13 @@
 <section class="main-aboutme main-aboutme_content">
-    <h2>About <span>me</span></h2>
+    <h2>{{'aboutMe.title_part_one' | translate}} <span>{{'aboutMe.title_part_two' | translate}}</span></h2>
     <article>
-        Hi! I'm Chris! I am a passionate full-stack developer who loves building modern, user-friendly
-        web applications. I enjoy turning ideas into interactive experiences. I am always eager to learn
-        new technologies.
+        <p>{{ 'aboutMe.firstTagLine' | translate}}</p>
+        @if (showMore) {
+            <p class="about-me_more" #pathRef>{{'aboutMe.pathTagLine' | translate}}</p>
+            <p class="about-me_more">{{'aboutMe.hobbyTagLine' | translate}}</p>
+        }
     </article>
-    <button>More about me</button>
+    <button (click)="revealMore()">{{ 'aboutMe.moreAboutMeButton' | translate}}</button>
 </section>
 <section class="main-aboutme main-aboutme_info">
     <section class="info-line" >
@@ -13,7 +15,7 @@
             <img src="/assets/icons/location-pin.svg" alt="">
         </div>
         <div class="info-line_text">
-            <p>Open to new opportunities <br> Remote or on-site</p>
+            <p [innerHTML]="'aboutMe.location' | translate"></p>
         </div>
     </section>
     <section class="info-line" >
@@ -21,7 +23,7 @@
             <img src="/assets/icons/lightbulb-icon.svg" alt="">
         </div>
         <div class="info-line_text">
-            <p>Always learning <br> New technologies & better solutions</p>
+            <p [innerHTML]="'aboutMe.ideas' | translate"></p>
         </div>
     </section>
     <section class="info-line" >
@@ -29,7 +31,7 @@
             <img src="/assets/icons/users-icon.svg" alt="">
         </div>
         <div class="info-line_text">
-            <p>Team player <br> Collaboration & creative ideas</p>
+            <p [innerHTML]="'aboutMe.teamPlayer' | translate"></p>
         </div>
     </section>
 </section>
