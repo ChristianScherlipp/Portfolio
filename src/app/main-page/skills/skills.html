@@ -1,1 +1,72 @@
-<p>skills works!</p>
+<section class="skill-title-text">
+    <h2 class="skill-headline">Skill <span>set</span></h2>
+    <div class="skill-caption">
+        <p class="skill-text">{{ 'skills.subtitle' | translate }}</p>
+    </div>
+</section>
+<section class="skills">
+    @for (row of rows; track $index) {
+        <div class="skill-row" [class.skill-row--reverse]="$index === 1">
+        <div class="skill-row-track">
+            @for (skill of row; track skill.name) {
+            <section class="skill-item" [class.skill-item--learned]="skill.learned">
+                <div class="skill-icon-wrapper">
+                    <div class="skill-frame"></div>
+                <span class="skill-tooltip">{{
+                    skill.learned ? ('skills.learned' | translate) : ('skills.interested' | translate)
+                }}</span>
+                <div
+                    class="skill-icon"
+                    [style.-webkit-mask-image]="'url(/assets/icons/skills/' + skill.icon + '.svg)'"
+                    [style.mask-image]="'url(/assets/icons/skills/' + skill.icon + '.svg)'"
+                    [attr.aria-label]="skill.name"
+                    role="img"
+                ></div>
+                </div>
+                <span class="skill-name">{{ skill.name }}</span>
+            </section>
+            }
+            @for (skill of row; track skill.name) {
+            <section
+                class="skill-item"
+                [class.skill-item--learned]="skill.learned"
+                aria-hidden="true"
+            >
+                <div class="skill-icon-wrapper">
+                    <div class="skill-frame"></div>
+                <span class="skill-tooltip">{{
+                    skill.learned ? ('skills.learned' | translate) : ('skills.interested' | translate)
+                }}</span>
+                <div
+                    class="skill-icon"
+                    [style.-webkit-mask-image]="'url(/assets/icons/skills/' + skill.icon + '.svg)'"
+                    [style.mask-image]="'url(/assets/icons/skills/' + skill.icon + '.svg)'"
+                ></div>
+                </div>
+                <span class="skill-name">{{ skill.name }}</span>
+            </section>
+            }
+            @for (skill of row; track skill.name) {
+            <section
+                class="skill-item"
+                [class.skill-item--learned]="skill.learned"
+                aria-hidden="true"
+            >
+                <div class="skill-icon-wrapper">
+                    <div class="skill-frame"></div>
+                <span class="skill-tooltip">{{
+                    skill.learned ? ('skills.learned' | translate) : ('skills.interested' | translate)
+                }}</span>
+                <div
+                    class="skill-icon"
+                    [style.-webkit-mask-image]="'url(/assets/icons/skills/' + skill.icon + '.svg)'"
+                    [style.mask-image]="'url(/assets/icons/skills/' + skill.icon + '.svg)'"
+                ></div>
+                </div>
+                <span class="skill-name">{{ skill.name }}</span>
+            </section>
+            }
+        </div>
+        </div>
+    }
+</section>

@@ -11,3 +11,9 @@
     height: 30rem;
     scroll-margin-top: var.$navbar-height;
 }
+
+.skill-content {
+    flex-direction: column;
+    height: 45rem;
+    color: var.$text-color;
+}

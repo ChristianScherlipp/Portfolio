@@ -1,0 +1,152 @@
+@use 'abstracts/variables' as var;
+
+.skill-title-text {
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        font-size: 4rem;
+
+        span {
+            color: var.$accent-blue;
+        }
+    }
+
+    p {
+        font-size: 1.7rem;
+    }
+}
+
+.skills{
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+}
+
+// Reihe: Hintergrund so hoch wie Icon+Text, verdeckt den ueberstehenden Track
+.skill-row {
+    position: relative;
+    width: 100%;
+    height: 9rem;
+    overflow-x: clip;
+    overflow-y: visible;
+}
+
+.skill-row-track {
+    display: flex;
+    width: max-content;
+    height: 100%;
+    animation: skill-marquee-left 28s linear infinite;
+
+    &:hover {
+        animation-play-state: paused;
+    }
+}
+
+.skill-row--reverse .skill-row-track {
+    animation-name: skill-marquee-right;
+}
+
+@keyframes skill-marquee-left {
+    from {transform: translateX(0%);}
+    to {transform: translateX(-50%);}
+}
+
+@keyframes skill-marquee-right {
+    from {transform: translateX(-50%);}
+    to {transform: translateX(0%);}
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 9rem;
+    height: 9rem;
+
+}
+
+.skill-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.25s ease;
+}
+
+.skill-frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 9rem;
+    height: 9rem;
+    transform: translate(-50%, -50%);
+    background-color: var.$skill-row-bg-color;
+    -webkit-mask-image: url('/assets/icons/film-frame.svg');
+    mask-image: url('/assets/icons/film-frame.svg');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    pointer-events: none;
+}
+
+// Icon als Maske, damit die einfarbigen SVGs per CSS eingefaerbt werden koenne
+.skill-icon {
+    position: relative;
+    width: 5rem;
+    height: 5rem;
+    background-color: var.$accent-sand;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    transition: background-color 0.25s ease;
+}
+
+.skill-item:nth-child(even) .skill-icon {
+    background-color: var.$accent-blue;
+}
+
+// Nicht gelernte Skills werden ausgegraut, unabhaengig von sand/blau
+.skill-item:not(.skill-item--learned) .skill-icon {
+    background-color: var.$field-border-color;
+}
+
+// Tooltip: erscheint ueber dem Icon, Icon wandert nach oben
+.skill-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 4px);
+    margin-bottom: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    white-space: nowrap;
+    font-size: 1rem;
+    background-color: var.$basic-bg-color;
+    color: var.$text-color;
+    border-radius: 0.375rem;
+    border: 1px solid var.$field-border-color;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.skill-icon-wrapper:hover {
+    transform: translateY(-0.5rem);
+
+    .skill-tooltip {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}

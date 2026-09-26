@@ -14,12 +14,17 @@
     "aboutMe": {
         "title_part_one" : "About ",
         "title_part_two" : "me",
-        "firstTagLine" : "Hi! I'm Chris! I am a passionate full-stack developer who loves building modern, user-friendly web applications. I enjoy turning ideas into interactive experiences. I am always eager to learn new technologies.",
+        "firstTagLine" : "Hi! I'm Chris! I am a passionate Fullstack developer who loves building modern, user-friendly web applications. I enjoy turning ideas into interactive experiences. I am always eager to learn new technologies.",
         "pathTagLine" : "My path here wasn't typical: I started out as a bricklayer, working in that field for several years before moving into the industrial sector. A workplace accident led me to programming and prompted me to begin retraining\u2014in hindsight, exactly the right next step for me.",
         "hobbyTagLine" : "Outside of code, gaming has fascinated me since I was a kid, and I'm still into it today. Learning to program became a new chapter for me after the accident, but gaming has stayed a constant throughout.",
         "moreAboutMeButton" : "More about me",
         "location" : "Open to new opportunities <br> Remote or on-site",
         "ideas" : "Always learning <br> New technologies & better solutions",
         "teamPlayer" : "Team player <br> Collaboration & creative ideas"
+    },
+    "skills": {
+        "subtitle": "Technologies I Work With",
+        "learned": "Learned",
+        "interested" : "I have a special interest in learning this"
     }
 }

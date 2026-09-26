@@ -4,8 +4,8 @@
         <p>Chris<span>tian</span></p>
     </section>
     <Section class="navbar-link">
-        <a href="#about-me">{{ 'navbar.aboutMe' | translate }}</a>
-        <a href="">{{ 'navbar.skills' | translate}}</a>
+        <a [routerLink]="['/']" fragment="about-me">{{ 'navbar.aboutMe' | translate }}</a>
+        <a [routerLink]="['/']" fragment="skills">{{ 'navbar.skills' | translate}}</a>
         <a href="">{{ 'navbar.myProjects' |translate }}</a>
         <a href="">{{ 'navbar.contact' | translate}}</a>
     </Section>
