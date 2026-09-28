@@ -26,5 +26,18 @@
         "subtitle": "Technologien mit denen ich arbeite",
         "learned": "Gelernt",
         "interested" : "Ich habe ein besonderes Interesse am Lernen"
+    },
+    "projects": {
+        "title_part_one" : "Meine",
+        "title_part_two" : "Projekte",
+        "join" :{
+            "description": "Aufgabenverwaltung nach dem Kanban-Prinzip. Aufgaben per Drag-and-drop erstellen und organisieren, Nutzer und Kategorien zuweisen."
+        },
+        "sharkie":{
+            "description": "2D-Jump'n'Run, in dem du als Hai durch prozedural generierte Level schwimmst, Gegner und einen Endboss bekämpfst und Coins sammelst. Mit Menüs, Shop, Soundsystem und Touch-Steuerung für mobile Geräte."
+        },
+        "pokedex": {
+            "description": "Interaktive Pokédex-Webanwendung auf Basis der PokéAPI. Alle Pokémon als Karten mit Nachladen, Suche und Detail-Dialog mit Tabs für About, Base Stats, Evolution und Moves. Dazu Ladebildschirm und Navigation durch den Dialog."
+        }
     }
 }

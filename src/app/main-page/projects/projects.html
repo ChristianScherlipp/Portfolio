@@ -1,1 +1,26 @@
-<p>projects works!</p>
+<section class="project-title-text">
+    <h2 class="project-headline">{{'projects.title_part_one' | translate}} <span>{{'projects.title_part_two' | translate}}</span></h2>
+</section>
+<section class="projects">
+    @for (project of projects; track $index) {
+        <article class="project-content">
+            <figure class="project-image">
+                <img src="/assets/img/projects/{{project.name}}.webp" alt="{{project.name}}">
+            </figure>
+            <section class="project-info">
+                <h3 class="project-info_title">{{project.name}}</h3>
+                <div class="project-info_techStack">
+                    @for (techStack of project.techStacks; track $index) {
+                        <p>{{techStack}}</p>
+                    }
+                </div>
+                <p class="project-info_description">{{'projects.' + project.name + '.description' | translate}}</p>
+                <div class="project-info_buttons">
+                    <a href="{{project.github}}" target="_blank">Github</a>
+                    <a href="{{project.liveDemo}}" target="_blank">Live Demo</a>
+                </div>
+            </section>
+
+        </article>
+    }
+</section>

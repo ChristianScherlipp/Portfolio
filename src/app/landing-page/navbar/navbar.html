@@ -6,7 +6,7 @@
     <Section class="navbar-link">
         <a [routerLink]="['/']" fragment="about-me">{{ 'navbar.aboutMe' | translate }}</a>
         <a [routerLink]="['/']" fragment="skills">{{ 'navbar.skills' | translate}}</a>
-        <a href="">{{ 'navbar.myProjects' |translate }}</a>
+        <a [routerLink]="['/']" fragment="projects">{{ 'navbar.myProjects' |translate }}</a>
         <a href="">{{ 'navbar.contact' | translate}}</a>
     </Section>
     <section class="navbar-select-language">

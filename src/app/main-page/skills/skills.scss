@@ -120,7 +120,7 @@
 
 // Nicht gelernte Skills werden ausgegraut, unabhaengig von sand/blau
 .skill-item:not(.skill-item--learned) .skill-icon {
-    background-color: var.$field-border-color;
+    background-color: var.$skill-grayed-out-color;
 }
 
 // Tooltip: erscheint ueber dem Icon, Icon wandert nach oben

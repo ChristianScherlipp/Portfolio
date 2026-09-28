@@ -26,5 +26,19 @@
         "subtitle": "Technologies I Work With",
         "learned": "Learned",
         "interested" : "I have a special interest in learning this"
+    },
+    "projects": {
+        "title_part_one" : "My",
+        "title_part_two" : "Projects",
+        "join" :{
+            "description": "Task manager inspired by the Kanban system. Create and organize tasks using drag and drop, assign users and categories."
+        },
+        "sharkie":{
+            "description": "2D jump'n'run in which you swim as a shark through procedurally generated levels, fight enemies and an end boss, and collect coins. Includes menus, a shop, a sound system and touch controls for mobile devices."
+        },
+        "pokedex": {
+            "description": "Interactive Pokédex web app built on the PokéAPI. All Pokémon as cards with lazy loading, search and a detail dialog with tabs for About, Base Stats, Evolution and Moves. Also includes a loading screen and navigation through the dialog."
+        }
     }
+    
 }
