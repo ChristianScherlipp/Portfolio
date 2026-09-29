@@ -39,6 +39,15 @@
         "pokedex": {
             "description": "Interactive Pokédex web app built on the PokéAPI. All Pokémon as cards with lazy loading, search and a detail dialog with tabs for About, Base Stats, Evolution and Moves. Also includes a loading screen and navigation through the dialog."
         }
+    },
+    "contact": {
+        "title": "Contact",
+        "tagline": "Got a project in mind ? <br> Let's create something amazing together!",
+        "namePlaceholder": "Your name",
+        "emailPlaceholder": "Your email",
+        "messagePlaceholder": "Your message",
+        "privacyPrefix": "I agree to the",
+        "privacyLink": "privacy policy",
+        "sendButton": "Send message"
     }
-    
 }

@@ -1,4 +1,5 @@
 import { Component, ElementRef, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
@@ -9,6 +10,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class Hero {
   private hostElement = inject(ElementRef<HTMLElement>);
+  private router = inject(Router)
 
   scrollToNext(): void {
     const nextSection = this.hostElement.nativeElement.nextElementSibling as HTMLElement | null;
@@ -18,5 +20,9 @@ export class Hero {
     }else {
       window.scrollBy({ top: window.innerHeight, behavior: 'smooth'});
     }
+  }
+
+  navigateToContact(): void {
+    this.router.navigate(['/'], { fragment: 'contact' });
   }
 }

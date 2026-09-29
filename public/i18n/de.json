@@ -39,5 +39,15 @@
         "pokedex": {
             "description": "Interaktive Pokédex-Webanwendung auf Basis der PokéAPI. Alle Pokémon als Karten mit Nachladen, Suche und Detail-Dialog mit Tabs für About, Base Stats, Evolution und Moves. Dazu Ladebildschirm und Navigation durch den Dialog."
         }
+    },
+    "contact": {
+        "title": "Kontakt",
+        "tagline": "Hast du ein Projekt im Kopf ? <br> Lass uns gemeinsam etwas Großartiges erschaffen!",
+        "namePlaceholder": "Dein Name",
+        "emailPlaceholder": "Deine E-Mail",
+        "messagePlaceholder": "Deine Nachricht",
+        "privacyPrefix": "Ich stimme der",
+        "privacyLink": "Datenschutzerklärung zu",
+        "sendButton": "Nachricht senden"
     }
 }

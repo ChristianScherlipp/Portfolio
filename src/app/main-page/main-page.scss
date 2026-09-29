@@ -21,5 +21,14 @@
 
 .project-content {
     flex-direction: column;
+    padding: 3rem 0;
     color: var.$text-color;
+}
+
+.contact-content {
+    flex-direction: column;
+    height: auto;
+    padding: 3rem 0;
+    color: var.$text-color;
+    scroll-margin-top: var.$navbar-height;
 }

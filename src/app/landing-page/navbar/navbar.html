@@ -7,7 +7,7 @@
         <a [routerLink]="['/']" fragment="about-me">{{ 'navbar.aboutMe' | translate }}</a>
         <a [routerLink]="['/']" fragment="skills">{{ 'navbar.skills' | translate}}</a>
         <a [routerLink]="['/']" fragment="projects">{{ 'navbar.myProjects' |translate }}</a>
-        <a href="">{{ 'navbar.contact' | translate}}</a>
+        <a [routerLink]="['/']" fragment="contact">{{ 'navbar.contact' | translate}}</a>
     </Section>
     <section class="navbar-select-language">
         <span class="navbar-select-language_slider" [class.navbar-select-language_slider--en]="translate.currentLang() === 'en'"></span>
