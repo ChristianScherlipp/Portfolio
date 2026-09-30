@@ -32,3 +32,10 @@
     color: var.$text-color;
     scroll-margin-top: var.$navbar-height;
 }
+
+.review-content {
+    width: 100%;
+    overflow: hidden;
+    color: var.$text-color;
+    border-bottom: 2px solid var.$Separator-lines-color;
+}

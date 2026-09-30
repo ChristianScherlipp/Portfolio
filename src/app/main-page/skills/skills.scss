@@ -34,6 +34,27 @@
     height: 9rem;
     overflow-x: clip;
     overflow-y: visible;
+    
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        top: -10%;
+        bottom: 0;
+        width: 7rem;
+        z-index: 2;
+        pointer-events: none;
+    }
+
+    &::before {
+        left: 0;
+        background: linear-gradient(to right, var.$basic-bg-color, transparent)
+    }
+
+    &::after {
+        right: 0;
+        background: linear-gradient(to left, var.$basic-bg-color, transparent);
+    }
 }
 
 .skill-row-track {

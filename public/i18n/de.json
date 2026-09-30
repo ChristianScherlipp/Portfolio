@@ -49,5 +49,25 @@
         "privacyPrefix": "Ich stimme der",
         "privacyLink": "Datenschutzerklärung zu",
         "sendButton": "Nachricht senden"
+    },
+    "review" : {
+        "title" : "PLATZHALTER: Was meine Kolleg:innen ueber mich sagen",
+        "prevLabel": "Vorherige Rezension",
+        "nextLabel": "Naechste Rezension",
+        "dotLabel": "Rezension",
+        "testimonials": [
+            {
+                "quote": "PLATZHALTER-Zitat 1 - bitte durch echten Text ersetzen.",
+                "author": "PLATZHALTER-Name 1 - Rolle"
+            },
+            {
+                "quote": "PLATZHALTER-Zitat 2 - bitte durch echten Text ersetzen.",
+                "author": "PLATZHALTER-Name 2 - Rolle"
+            },
+            {
+                "quote": "PLATZHALTER-Zitat 3 - bitte durch echten Text ersetzen.",
+                "author": "PLATZHALTER-Name 3 - Rolle"
+            }
+        ]
     }
 }

@@ -1,0 +1,32 @@
+<section class="review">
+    <h2 class="review-title">{{ 'review-title' | translate }}</h2>
+    <section class="review-carousel">
+        @for (testimonial of testimonials(); track $index) {
+            <article
+                class="review-card"
+                [class.review-card--active]="$index === activeIndex()"
+                [class.review-card--prev]="$index === prevIndex()"
+                [class.review-card--next]="$index === nextIndex()">
+                @if ($index === activeIndex()) {
+                    <img src="/assets/icons/quotes.svg" alt="Icon Quotes" class="review-card_quote-icon">
+                }
+                <p class="review-card_text">{{testimonial.quote}}</p>
+                <div class="review-card_footer">
+                    <span class="review-card_author">{{ testimonial.author }}</span>
+                </div>
+            </article>
+        }
+    </section>
+    <section class="review-controls">
+        <button type="button" class="review-controls_arrow" (click)="prev()" [attr.aria-label]="'review.prevLabel' | translate">&#8592;</button>
+        @for (testimonial of testimonials(); track $index) {
+            <button
+            type="button"
+            class="review-controls_dot"
+            [class.review-controls_dot--active]="$index === activeIndex()"
+            (click)="goTo($index)"
+            [attr.aria-label]="('review.dotLabel' | translate) + ' ' + ($index + 1)"></button>
+        }
+        <button type="button" class="review-controls_arrow" (click)="next()" [attr.aria-label]="'review.nextLabel' | translate">&#8594;</button>
+    </section>
+</section>

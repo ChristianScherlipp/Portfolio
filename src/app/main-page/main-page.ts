@@ -3,9 +3,10 @@ import { AboutMe } from './about-me/about-me';
 import { Skills } from './skills/skills';
 import { Projects } from './projects/projects';
 import { Contact } from './contact/contact';
+import { Review } from './review/review';
 
 @Component({
-  imports: [AboutMe, Skills, Projects, Contact],
+  imports: [AboutMe, Skills, Projects, Contact, Review],
   selector: 'app-main-page',
   styleUrl: './main-page.scss',
   templateUrl: './main-page.html',
