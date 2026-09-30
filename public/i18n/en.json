@@ -51,7 +51,7 @@
         "sendButton": "Send message"
     },
     "review" : {
-        "title" : "PLACEHOLDER: What my colleagues say about me",
+        "title" : "What my colleagues say about me",
         "prevLabel": "Previous review",
         "nextLabel": "Next review",
         "dotLabel": "Review",
@@ -69,5 +69,9 @@
                 "author": "PLACEHOLDER name 3 - role"
             }
         ]
+    },
+    "footer": {
+        "legalNotice": "Legal Notice",
+        "privacyPolicy": "Privacy Polic"
     }
 }

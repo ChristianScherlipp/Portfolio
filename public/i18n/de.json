@@ -51,7 +51,7 @@
         "sendButton": "Nachricht senden"
     },
     "review" : {
-        "title" : "PLATZHALTER: Was meine Kolleg:innen ueber mich sagen",
+        "title" : "Was meine Kolleg:innen über mich sagen",
         "prevLabel": "Vorherige Rezension",
         "nextLabel": "Naechste Rezension",
         "dotLabel": "Rezension",
@@ -69,5 +69,9 @@
                 "author": "PLATZHALTER-Name 3 - Rolle"
             }
         ]
+    },
+    "footer": {
+        "legalNotice": "Impressum",
+        "privacyPolicy": "Datenschutzerklärung"
     }
 }
