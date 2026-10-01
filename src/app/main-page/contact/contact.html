@@ -3,14 +3,37 @@
         <h2 class="contact-headline">{{'contact.title' | translate}}</h2>
         <p class="contact-tagline" [innerHTML]="'contact.tagline' | translate"></p>
     </div>
-    <form class="contact-form">
-        <input class="contact-form_input" type="text" name="name" [placeholder]="'contact.namePlaceholder' | translate">
-        <input class="contact-form_input" type="email" name="email" [placeholder]="'contact.emailPlaceholder' | translate">
-        <textarea class="contact-form_input contact-form_message" name="message" [placeholder]="'contact.messagePlaceholder' | translate"></textarea>
-        <label class="contact-form_privacy">
-            <input type="checkbox" name="privacy">
-            <span>{{'contact.privacyPrefix' | translate}} <a href="#">{{ 'contact.privacyLink' | translate }}</a></span>
-        </label>
-        <button type="submit" class="contact-form_submit">{{ 'contact.sendButton' | translate}}</button>
+    <form class="contact-form" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <fieldset class="contact-form_field">
+            <input class="contact-form_input" type="text" formControlName="name" [placeholder]="'contact.namePlaceholder' | translate">
+            @if (contactForm.controls.name.touched && contactForm.controls.name.invalid) {
+                <p class="contact-form_error">{{ 'contact.errors.name' | translate}}</p>
+            }
+        </fieldset>
+        <fieldset class="contact-form_field">
+            <input class="contact-form_input" type="email" formControlName="email" [placeholder]="'contact.emailPlaceholder' | translate">
+            @if (contactForm.controls.email.touched && contactForm.controls.email.invalid) {
+                <p class="contact-form_error">{{ 'contact.errors.email' | translate}}</p>
+            }
+        </fieldset>
+        <fieldset class="contact-form_field">
+            <textarea class="contact-form_input contact-form_message" formControlName="message" [placeholder]="'contact.messagePlaceholder' | translate"></textarea>
+            @if (contactForm.controls.message.touched && contactForm.controls.message.invalid) {
+                <p class="contact-form_error">{{ 'contact.errors.message' | translate}}</p>
+            }
+        </fieldset>
+        <fieldset class="contact-form_field">
+            <label class="contact-form_privacy">
+                <input type="checkbox" formControlName="privacy">
+                <span>{{'contact.privacyPrefix' | translate}} <a href="#">{{ 'contact.privacyLink' | translate }}</a></span>
+            </label>
+            @if (contactForm.controls.privacy.touched && contactForm.controls.privacy.invalid) {
+                <p class="contact-form_error">{{ 'contact.errors.privacy' | translate}}</p>
+            }
+        </fieldset>
+        <button type="submit" class="contact-form_submit" [disabled]="contactForm.invalid">{{ 'contact.sendButton' | translate}}</button>
+        @if (submitted()) {
+            <p class="contact-form_success">{{ 'contact.success' | translate}}</p>
+        }
     </form>
 </section>

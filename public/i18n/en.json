@@ -48,7 +48,14 @@
         "messagePlaceholder": "Your message",
         "privacyPrefix": "I agree to the",
         "privacyLink": "privacy policy",
-        "sendButton": "Send message"
+        "sendButton": "Send message",
+        "success": "Thanks! Your message has been sent.",
+        "errors": {
+            "name": "Please enter at least 3 characters.",
+            "email": "Please enter a valid email address ending in .de or .com.",
+            "message": "Please enter at least 20 characters.",
+            "privacy": "Please agree to the privacy policy."
+        }
     },
     "review" : {
         "title" : "What my colleagues say about me",

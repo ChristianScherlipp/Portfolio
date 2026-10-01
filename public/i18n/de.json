@@ -48,7 +48,14 @@
         "messagePlaceholder": "Deine Nachricht",
         "privacyPrefix": "Ich stimme der",
         "privacyLink": "Datenschutzerklärung zu",
-        "sendButton": "Nachricht senden"
+        "sendButton": "Nachricht senden",
+        "success": "Danke! Deine Nachricht wurde gesendet.",
+        "errors": {
+            "name": "Bitte gib mindestens 3 Zeichen ein.",
+            "email": "Bitte gib eine gültige E-Mail-Adresse mit .de oder .com ein.",
+            "message": "Bitte gib mindestens 20 Zeichen ein.",
+            "privacy": "Bitte stimme der Datenschutzerklärung zu."
+        }
     },
     "review" : {
         "title" : "Was meine Kolleg:innen über mich sagen",
