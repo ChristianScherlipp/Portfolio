@@ -5,11 +5,18 @@
     @include mix.light-sphere;
 
     &--blue {
-        width: mix.fluid(200, 420);
-        height: mix.fluid(200, 420);
+        --sphere-size: #{mix.fluid(200, 420)};
+        width: var(--sphere-size);
+        height: var(--sphere-size);
         background: var.$light-sphere-blue;
         right: -6%;
         bottom: -22%;
+
+        @include mix.respond-below(900px) {
+            --sphere-size: #{mix.fluid(260, 420)};
+            right: calc(var(--sphere-size) * -0.55);
+            bottom: calc(var(--sphere-size) * -0.55);
+        }
     }
 
     &--sand {
@@ -34,6 +41,11 @@
     align-items: center;
     color: var.$text-color;
 
+    @include mix.respond-below(900px) {
+        width: 100%;
+        height: auto;
+    }
+
     &_content {
         justify-content: space-around;
         align-items: flex-start;
@@ -45,8 +57,19 @@
     }
 }
 
+@include mix.respond-below(900px) {
+    .main-aboutme_content {
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+}
+
 .main-aboutme_content > h2 {
     font-size: 4rem;
+
+    @include mix.respond-below(900px) {
+        font-size: mix.fluid(36, 64);
+    }
 
     span {
         color: var.$accent-blue;
@@ -59,6 +82,13 @@
     padding-right: 1rem;
     height: 14rem;
     overflow-y: auto;
+
+    @include mix.respond-below(900px) {
+        font-size: mix.fluid(16, 24);
+        height: auto;
+        padding-right: 0;
+        overflow-y: visible;
+    }
     scrollbar-width: thin; // Firefox
     scrollbar-color: var.$accent-sand Transparent; // Firefox
 
@@ -94,6 +124,10 @@
     background: transparent;
     cursor: pointer;
     transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    
+    @include mix.respond-below(900px) {
+        font-size: 1.25rem;
+    }
 
     &:hover {
         background: var.$accent-sand;
@@ -112,14 +146,27 @@
     gap: 4rem;
     padding-left: 6rem;
 
+    @include mix.respond-below(900px) {
+        height: auto;
+        gap: 1.5rem;
+        padding-left: 0;
+        font-size: mix.fluid(16, 28);
+    }
+
     &_picture {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 6rem;
         height: 6rem;
+        flex-shrink: 0;
         border: 2px solid var.$field-border-color;
         border-radius: 50%;
+
+        @include mix.respond-below(900px) {
+            width: 3.5rem;
+            height: 3.5rem;
+        }
     }
 
     &_text {
@@ -129,6 +176,12 @@
         width: 70%;
         height: 100%;
 
+        @include mix.respond-below(900px) {
+            flex: 1;
+            width: auto;
+            padding-block: 1.25rem;
+        }
+
         &--underline {
             border-bottom: 1px solid var.$field-border-color;
         }
@@ -137,6 +190,12 @@
     &_picture > img {
         width: 3rem;
         height: 3rem;
+
+        @include mix.respond-below(900px) {
+            width: 1.75rem;
+            height: 1.75rem;
+        }
+
         filter: brightness(0) invert(80%) sepia(15%) saturate(375%)hue-rotate(349deg) brightness(103%) contrast(79%);
     }
 }

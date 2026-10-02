@@ -1,18 +1,26 @@
 @use 'abstracts/variables' as var;
+@use 'abstracts/mixins' as mix;
 
 .main-content {
-    width: 1440px;
+    width: 100%;
+    max-width: 1440px;
     margin-inline: auto;
     display: flex;
     border-bottom: 2px solid var.$Separator-lines-color;
 }   
-
 
 .about-me {
     position: relative;
     overflow: hidden;
     height: 30rem;
     scroll-margin-top: var.$navbar-height;
+
+    @include mix.respond-below(900px) {
+        flex-direction: column;
+        height: auto;
+        gap: 2.5rem;
+        padding: 3rem 1.5rem;
+    }
 }
 
 .skill-content {
@@ -35,6 +43,10 @@
     padding: 3rem 0;
     color: var.$text-color;
     scroll-margin-top: var.$navbar-height;
+
+    @include mix.respond-below(900px) {
+        padding: 3rem 1.5rem;
+    }
 }
 
 .review-content {

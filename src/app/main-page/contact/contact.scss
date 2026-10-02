@@ -5,11 +5,18 @@
     @include mix.light-sphere;
 
     &--blue {
-        width: mix.fluid(180, 380);
-        height: mix.fluid(180, 380);
+        --sphere-size: #{mix.fluid(180, 380)};
+        width: var(--sphere-size);
+        height: var(--sphere-size);
         background: var.$light-sphere-blue;
         left: -8%;
         bottom: -20%;
+
+        @include mix.respond-below(900px) {
+            --sphere-size: #{mix.fluid(250, 380)};
+            left: calc(var(--sphere-size) * -0.5);
+            bottom: calc(var(--sphere-size) * -0.5);
+        }
     }
 
     &--sand {
@@ -34,6 +41,10 @@
     opacity: 0.35;
     pointer-events: none;
     z-index: 0;
+
+    @include mix.respond-below(900px) {
+        display: none;
+    }
 }
 
 .contact {
@@ -46,6 +57,13 @@
     align-items: flex-start;
     gap: 4rem;
     color: var.$text-color;
+
+    @include mix.respond-below(900px) {
+        flex-direction: column;
+        align-items: stretch;
+        min-height: 0;
+        gap: 2rem;
+    }
 }
 
 .contact-info {
@@ -57,16 +75,31 @@
     justify-content: flex-start;
     gap: 3rem;
     padding-top: 2rem;
+
+    @include mix.respond-below(900px) {
+        width: 100%;
+        height: auto;
+        gap: 1rem;
+        padding-top: 0;
+    }
 }
 
 .contact-headline {
     font-size: 3.3125rem;
     font-weight: 700;
+
+    @include mix.respond-below(900px) {
+        font-size: mix.fluid(36, 53);
+    }
 }
 
 .contact-tagline {
     font-size: 1.75rem;
     line-height: 1.4;
+
+    @include mix.respond-below(900px) {
+        font-size: mix.fluid(18, 28);
+    }
 }
 
 .contact-form {
@@ -76,6 +109,12 @@
     flex-direction: column;
     gap: 1.25rem;
     padding-top: 2rem;
+
+    @include mix.respond-below(900px) {
+        width: 100%;
+        height: auto;
+        padding-top: 0;
+    }
 }
 
 .contact-form_field {
