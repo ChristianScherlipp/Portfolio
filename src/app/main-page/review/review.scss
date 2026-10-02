@@ -1,4 +1,5 @@
 @use 'abstracts/variables' as var;
+@use 'abstracts/mixins' as mix;
 
 .review {
     width: 100%;
@@ -7,6 +8,11 @@
     align-items: center;
     gap: 3rem;
     padding: 4rem 0 5rem;
+
+    @include mix.respond-below(900px) {
+        gap: 1.5rem;
+        padding: 3rem 0;
+    }
 }
 
 .review-title {
@@ -24,6 +30,17 @@
     overflow: hidden;
     mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+
+    // Mobil: nur die aktive Karte, in den Fluss gesetzt, damit nichts abgeschnitten wird
+    @include mix.respond-below(900px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 2rem 1.5rem 0;
+        mask-image: none;
+        -webkit-mask-image: none;
+    }
 }
 
 .review-card {
@@ -46,6 +63,15 @@
         background-color: var.$card-header-color;
         border: 2px solid var.$accent-blue;
         transform: translate(-50%, -50%);
+
+        @include mix.respond-below(900px) {
+            position: relative;
+            top: auto;
+            left: auto;
+            width: 100%;
+            max-width: 34rem;
+            transform: none;
+        }
     }
 
     &--prev,
@@ -57,6 +83,10 @@
         background-color: var.$field-bg-color;
         border: 2px solid var.$field-border-color;
         opacity: 0.5;
+
+        @include mix.respond-below(900px) {
+            display: none;
+        }
     }
 
     &--prev {

@@ -11,6 +11,15 @@ import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 })
 export class Navbar {
   translate = inject(TranslateService);
+  menuOpen = false;
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
+
+  closeMenu(): void {
+    this.menuOpen = false;
+  }
 
   changeLanguage(language: 'de' | 'en') {
     this.translate.use(language);

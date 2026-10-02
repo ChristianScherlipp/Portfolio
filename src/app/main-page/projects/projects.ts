@@ -1,5 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
+
+interface Project {
+  name: string;
+  techStacks: string[];
+  github: string;
+  liveDemo: string;
+}
 
 @Component({
   imports: [TranslatePipe],
@@ -8,9 +15,20 @@ import { TranslatePipe } from '@ngx-translate/core';
   templateUrl: './projects.html',
 })
 export class Projects {
-  projects = [
+  selectedProject: Project | null = null;
+  
+  projects: Project[] = [
     {name: "join", techStacks: ['CSS', 'HTML', 'Firebase', 'Angular', 'TypeScript'], github: '#', liveDemo: '#'},
     {name: "sharkie", techStacks: ['JavaScript', 'CSS', 'HTML'], github: 'https://github.com/ChristianScherlipp/Sharkie', liveDemo: 'https://christianscherlipp.developerakademie.net/Sharkie/index.html'},
     {name: "pokedex", techStacks: ['HTML', 'CSS', 'JavaScript', 'PokeAPI'], github: 'https://github.com/ChristianScherlipp/Pokedex', liveDemo: 'https://christianscherlipp.developerakademie.net/Pokedex/index.html'}
   ]
+
+  openPopup(project: Project): void {
+    this.selectedProject = project;
+  }
+
+  @HostListener('document:keydown.escape')
+  closePopup(): void {
+    this.selectedProject = null;
+  }
 }

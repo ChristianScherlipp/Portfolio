@@ -1,9 +1,14 @@
 @use 'abstracts/variables' as var;
+@use 'abstracts/mixins' as mix;
 
 .projects {
     display: flex;
     flex-direction: column;
     gap: 3rem;
+
+    @include mix.respond-below(900px) {
+        gap: 1.5rem;
+    }
 }
 
 .project-title-text{
@@ -12,11 +17,20 @@
     align-items: center;
     width: 100%;
     height: 7rem;
+
+    @include mix.respond-below(900px) {
+        height: auto;
+        margin-bottom: 1.5rem;
+    }
 }
 
 .project-headline {
     font-size: 3.3125rem;
     font-weight: 700;
+
+    @include mix.respond-below(900px) {
+        font-size: mix.fluid(32, 53);
+    }
 
     & span {
         color: var.$accent-blue;
@@ -31,11 +45,33 @@
     align-items: center;
     gap: 4rem;
 
+    // Mobil: Bild und Infos bilden eine gemeinsame Karte
+    @include mix.respond-below(900px) {
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        height: auto;
+        gap: 0;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var.$field-border-color;
+        border-radius: 0.5rem;
+        background-color: var.$field-bg-color;
+    }
+
     &:nth-child(even) {
         flex-direction: row-reverse;
 
         .project-image {
             justify-content: flex-end;
+        }
+
+        @include mix.respond-below(900px) {
+            flex-direction: column;
+
+            .project-image {
+                justify-content: flex-start;
+            }
         }
     }
 }
@@ -44,17 +80,37 @@
     display: flex;
     align-items: center;
     width: 50%;
+    flex: none;
     height: 34rem;
+
+    @include mix.respond-below(900px) {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
 }
 
 .project-image > img {
-    width: 40rem;
-    height: 30rem;
+    width: 100%;
+    max-width: 40rem;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
     border-radius: 2rem;
+
+    @include mix.respond-below(900px) {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        aspect-ratio: 5 / 2;
+        object-fit: cover;
+        border-radius: 0;
+    }
 }
 
 .project-info {
     width: auto;
+    min-width: 0;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -63,6 +119,17 @@
     border: 2px solid var.$field-border-color;
     border-radius: 2rem;
     background-color: var.$field-bg-color;
+
+    @include mix.respond-below(900px) {
+        width: 100%;
+        height: auto;
+        justify-content: flex-start;
+        gap: 0.75rem;
+        padding: 1rem;
+        border: none;
+        border-radius: 0;
+        background-color: transparent;
+    }
 
     &_title {
         width: 100%;
@@ -76,14 +143,31 @@
         border-top-left-radius: 2rem;
         border-top-right-radius: 2rem;
         padding: 2rem;
+
+        @include mix.respond-below(900px) {
+            order: 1;
+            height: auto;
+            padding: 0;
+            font-size: 1.125rem;
+            color: var.$text-color;
+            background-color: transparent;
+            border-radius: 0;
+        }
     }
 
     &_techStack {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        gap: 3rem;
+        flex-wrap: wrap;
+        gap: 1rem 3rem;
         padding: 0 2rem;
+
+        @include mix.respond-below(900px) {
+            order: 3;
+            gap: 0.5rem;
+            padding: 0;
+        }
 
         & p {
             width: max-content;
@@ -93,6 +177,12 @@
             align-content: center;
             text-align: center;
             background-color: var.$card-header-color;
+
+            @include mix.respond-below(900px) {
+                height: 1.75rem;
+                font-size: 0.8125rem;
+                font-weight: 600;
+            }
         }
     }
 
@@ -101,6 +191,12 @@
         line-height: 1.35;
         font-weight: 400;
         padding: 0 2rem;
+
+        @include mix.respond-below(900px) {
+            order: 2;
+            font-size: 0.875rem;
+            padding: 0;
+        }
     }
 
     &_buttons {
@@ -110,6 +206,10 @@
         padding: 0 2rem;
         width: 100%;
         height: 10rem;
+
+        @include mix.respond-below(900px) {
+            display: none;
+        }
 
         & a {
             width: 10rem;
@@ -127,6 +227,110 @@
         & a:hover {
             border: none;
             background-color: var.$accent-blue;;
+            color: var.$field-bg-color;
+        }
+    }
+}
+
+// Icon oben rechts im Bild (nur mobil)
+.project-image_link {
+    display: none;
+    fill: none;
+    stroke: var.$text-color;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    @include mix.respond-below(900px) {
+        display: block;
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 2rem;
+        height: 2rem;
+        padding: 0.375rem;
+        border-radius: 0.5rem;
+        background-color: rgba(var.$basic-bg-color, 0.75);
+    }
+}
+
+// Unsichtbarer Button ueber der ganzen Karte, oeffnet das Popup (nur mobil)
+.project-open {
+    display: none;
+
+    @include mix.respond-below(900px) {
+        display: block;
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+.project-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    &_box {
+        position: relative;
+        width: min(100%, 22rem);
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 2rem 1.5rem 1.5rem;
+        border: 2px solid var.$field-border-color;
+        border-radius: 1rem;
+        background-color: var.$field-bg-color;
+        color: var.$text-color;
+    }
+
+    &_close {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.75rem;
+        font-size: 1.75rem;
+        line-height: 1;
+        color: var.$text-color;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    &_title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        text-transform: capitalize;
+        color: var.$accent-blue;
+    }
+
+    &_buttons {
+        display: flex;
+        gap: 0.75rem;
+
+        & a {
+            flex: 1;
+            height: 2.75rem;
+            align-content: center;
+            text-align: center;
+            border: 2px solid var.$field-border-color;
+            border-radius: 0.75rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            color: var.$accent-blue;
+        }
+
+        & a:hover {
+            border-color: var.$accent-blue;
+            background-color: var.$accent-blue;
             color: var.$field-bg-color;
         }
     }

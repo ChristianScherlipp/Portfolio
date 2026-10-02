@@ -27,12 +27,25 @@
     flex-direction: column;
     height: 40rem;
     color: var.$text-color;
+
+    @include mix.respond-below(900px) {
+        height: auto;
+        padding: 2.5rem 0;
+    }
 }
 
 .project-content {
     flex-direction: column;
     padding: 3rem 0;
     color: var.$text-color;
+
+    @include mix.respond-below(1440px) {
+        padding-inline: 2rem;
+    }
+
+    @include mix.respond-below(900px) {
+        padding: 2.5rem 1.5rem;
+    }
 }
 
 .contact-content {
@@ -43,6 +56,10 @@
     padding: 3rem 0;
     color: var.$text-color;
     scroll-margin-top: var.$navbar-height;
+
+    @include mix.respond-below(1440px) {
+        padding-inline: 2rem;
+    }
 
     @include mix.respond-below(900px) {
         padding: 3rem 1.5rem;

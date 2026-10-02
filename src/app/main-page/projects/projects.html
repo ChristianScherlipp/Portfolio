@@ -6,6 +6,9 @@
         <article class="project-content">
             <figure class="project-image">
                 <img src="/assets/img/projects/{{project.name}}.webp" alt="{{project.name}}">
+                <svg class="project-image_link" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>
+                </svg>
             </figure>
             <section class="project-info">
                 <h3 class="project-info_title">{{project.name}}</h3>
@@ -20,7 +23,19 @@
                     <a href="{{project.liveDemo}}" target="_blank">Live Demo</a>
                 </div>
             </section>
-
+            <button class="project-open" type="button" [attr.aria-label]="project.name" (click)="openPopup(project)"></button>
         </article>
     }
 </section>
+@if (selectedProject) {
+    <section class="project-popup" (click)="closePopup()">
+        <div class="project-popup_box" role="dialog" aria-modal="true" [attr.aria-label]="selectedProject.name" (click)="$event.stopPropagation()">
+            <button class="project-popup_close" type="button" aria-label="Close" (click)="closePopup()">&times;</button>
+            <h3 class="project-popup_title">{{selectedProject.name}}</h3>
+            <div class="project-popup_buttons">
+                <a href="{{selectedProject.github}}" target="_blank" rel="noopener">Github</a>
+                <a href="{{selectedProject.liveDemo}}" target="_blank" rel="noopener">Live Demo</a>
+            </div>
+        </div>
+    </section>
+}

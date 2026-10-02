@@ -3,15 +3,20 @@
         <img src="/assets/icons/logo_chris_header.svg" alt="Logo inizialien von Christian Scherlipp auf Platine">
         <p>Chris<span>tian</span></p>
     </section>
-    <Section class="navbar-link">
-        <a [routerLink]="['/']" fragment="about-me">{{ 'navbar.aboutMe' | translate }}</a>
-        <a [routerLink]="['/']" fragment="skills">{{ 'navbar.skills' | translate}}</a>
-        <a [routerLink]="['/']" fragment="projects">{{ 'navbar.myProjects' |translate }}</a>
-        <a [routerLink]="['/']" fragment="contact">{{ 'navbar.contact' | translate}}</a>
+    <Section class="navbar-link" id="navbar-links" [class.navbar-link--open]="menuOpen">
+        <a [routerLink]="['/']" fragment="about-me" (click)="closeMenu()">{{ 'navbar.aboutMe' | translate }}</a>
+        <a [routerLink]="['/']" fragment="skills" (click)="closeMenu()">{{ 'navbar.skills' | translate}}</a>
+        <a [routerLink]="['/']" fragment="projects" (click)="closeMenu()">{{ 'navbar.myProjects' |translate }}</a>
+        <a [routerLink]="['/']" fragment="contact" (click)="closeMenu()">{{ 'navbar.contact' | translate}}</a>
     </Section>
     <section class="navbar-select-language">
         <span class="navbar-select-language_slider" [class.navbar-select-language_slider--en]="translate.currentLang() === 'en'"></span>
         <button [class.active]="translate.currentLang() === 'de'" (click)="changeLanguage('de')">DE</button>
         <button [class.active]="translate.currentLang() === 'en'" (click)="changeLanguage('en')">EN</button>
     </section>
+    <button class="navbar-burger" [class.navbar-burger--open]="menuOpen" type="button" aria-label="Menu" aria-controls="navbar-links" [attr.aria-expanded]="menuOpen" (click)="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 </section>

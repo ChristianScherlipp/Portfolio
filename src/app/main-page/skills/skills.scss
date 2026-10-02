@@ -1,4 +1,5 @@
 @use 'abstracts/variables' as var;
+@use 'abstracts/mixins' as mix;
 
 .skill-title-text {
     height: 30%;
@@ -17,6 +18,40 @@
     p {
         font-size: 1.7rem;
     }
+
+    @include mix.respond-below(900px) {
+        height: auto;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0 1.5rem 1.5rem;
+
+        h2 {
+            font-size: mix.fluid(36, 64);
+        }
+
+        p {
+            font-size: mix.fluid(12, 16);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var.$accent-sand;
+        }
+    }
+}
+
+// Mobil: Linie vor der Unterzeile, wie im Hero
+.skill-caption {
+    @include mix.respond-below(900px) {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        &::before {
+            content: '';
+            width: 2.5rem;
+            border-bottom: 1px solid var.$text-color;
+        }
+    }
 }
 
 .skills{
@@ -25,6 +60,11 @@
     flex-direction: column;
     justify-content: center;
     gap: 1rem;
+
+    @include mix.respond-below(900px) {
+        height: auto;
+        gap: 0.5rem;
+    }
 }
 
 // Reihe: Hintergrund so hoch wie Icon+Text, verdeckt den ueberstehenden Track
@@ -34,6 +74,10 @@
     height: 9rem;
     overflow-x: clip;
     overflow-y: visible;
+
+    @include mix.respond-below(900px) {
+        height: 5.5rem;
+    }
     
     &::before,
     &::after {
@@ -44,6 +88,10 @@
         width: 7rem;
         z-index: 2;
         pointer-events: none;
+
+        @include mix.respond-below(900px) {
+            width: 2rem;
+        }
     }
 
     &::before {
@@ -91,6 +139,16 @@
     width: 9rem;
     height: 9rem;
 
+    @include mix.respond-below(900px) {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
+}
+
+.skill-name {
+    @include mix.respond-below(900px) {
+        font-size: 0.8125rem;
+    }
 }
 
 .skill-icon-wrapper {
@@ -118,6 +176,11 @@
     -webkit-mask-position: center;
     mask-position: center;
     pointer-events: none;
+
+    @include mix.respond-below(900px) {
+        width: 5.5rem;
+        height: 5.5rem;
+    }
 }
 
 // Icon als Maske, damit die einfarbigen SVGs per CSS eingefaerbt werden koenne
@@ -133,6 +196,11 @@
     -webkit-mask-position: center;
     mask-position: center;
     transition: background-color 0.25s ease;
+
+    @include mix.respond-below(900px) {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
 }
 
 .skill-item:nth-child(even) .skill-icon {
