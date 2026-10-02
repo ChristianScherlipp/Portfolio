@@ -9,6 +9,8 @@
 
 
 .about-me {
+    position: relative;
+    overflow: hidden;
     height: 30rem;
     scroll-margin-top: var.$navbar-height;
 }
@@ -26,6 +28,8 @@
 }
 
 .contact-content {
+    position: relative;
+    overflow: hidden;
     flex-direction: column;
     height: auto;
     padding: 3rem 0;

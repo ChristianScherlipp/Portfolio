@@ -1,6 +1,30 @@
 @use 'abstracts/variables' as var;
+@use 'abstracts/mixins' as mix;
+
+.light-sphere {
+    @include mix.light-sphere;
+
+    &--blue {
+        width: mix.fluid(200, 420);
+        height: mix.fluid(200, 420);
+        background: var.$light-sphere-blue;
+        right: -6%;
+        bottom: -22%;
+    }
+
+    &--sand {
+        width: mix.fluid(60, 130);
+        height: mix.fluid(60, 130);
+        background: var.$light-sphere-sand;
+        opacity: 0.35;
+        right: 1%;
+        bottom: -8%;
+    }
+}
 
 .main-aboutme {
+    position: relative;
+    z-index: 1;
     width: 50%;
     height: 100%;
     margin-inline: auto;

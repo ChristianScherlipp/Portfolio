@@ -13,3 +13,12 @@
         @content;
     }
 }
+
+@mixin light-sphere($blur: 40px, $opacity: 0.45) {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur($blur);
+    opacity: $opacity;
+    pointer-events: none;
+    z-index: 0;
+}

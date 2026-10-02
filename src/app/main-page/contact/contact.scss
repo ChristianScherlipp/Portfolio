@@ -1,6 +1,44 @@
 @use 'abstracts/variables' as var;
+@use 'abstracts/mixins' as mix;
+
+.light-sphere {
+    @include mix.light-sphere;
+
+    &--blue {
+        width: mix.fluid(180, 380);
+        height: mix.fluid(180, 380);
+        background: var.$light-sphere-blue;
+        left: -8%;
+        bottom: -20%;
+    }
+
+    &--sand {
+        width: mix.fluid(60, 130);
+        height: mix.fluid(60, 130);
+        background: var.$light-sphere-sand;
+        opacity: 0.35;
+        left: 0;
+        bottom: -6%;
+    }
+}
+
+.contact-ring {
+    --ring-size: #{mix.fluid(300, 620)};
+    position: absolute;
+    left: 0;
+    bottom: calc(var(--ring-size) / -2);
+    width: var(--ring-size);
+    height: var(--ring-size);
+    border: 2px solid var.$field-border-color;
+    border-radius: 50%;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 0;
+}
 
 .contact {
+    position: relative;
+    z-index: 1;
     width: 100%;
     min-height: 32rem;
     display: flex;
