@@ -249,6 +249,7 @@
     height: mix.fluid(160, 585);
     border-radius: 50%;
     border: 2px solid var.$accent-blue;
+    filter: grayscale(100%);
 
     @include mix.respond-below(900px) {
         width: mix.fluid(230, 400);
