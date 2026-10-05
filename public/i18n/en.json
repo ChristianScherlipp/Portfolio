@@ -52,9 +52,10 @@
         "success": "Thanks! Your message has been sent.",
         "errors": {
             "name": "Please enter at least 3 characters.",
-            "email": "Please enter a valid email address ending in .de or .com.",
+            "email": "Please enter a valid email address ending in .de, .com. or .at.",
             "message": "Please enter at least 20 characters.",
-            "privacy": "Please agree to the privacy policy."
+            "privacy": "Please agree to the privacy policy.",
+            "send": "Your message could not be sent. Please try again later."
         }
     },
     "review" : {
@@ -79,6 +80,24 @@
     },
     "footer": {
         "legalNotice": "Legal Notice",
-        "privacyPolicy": "Privacy Polic"
+        "privacyPolicy": "Privacy Policy"
+    },
+    "imprint": {
+        "title": "Legal Notice",
+        "providerTitle": "Information pursuant to § 5 DDG",
+        "contactTitle": "Contact",
+        "email": "Email",
+        "phone": "Phone",
+        "vatTitle": "VAT ID",
+        "vatText": "VAT identification number pursuant to § 27a of the German Value Added Tax Act:",
+        "responsibleTitle": "Responsible for content pursuant to § 18 (2) MStV",
+        "responsibleText": "Address as above",
+        "contentLiabilityTitle": "Liability for content",
+        "contentLiabilityText": "As a service provider, I am responsible for my own content on these pages in accordance with general laws. However, I am not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate unlawful activity. Obligations to remove or block the use of information under general laws remain unaffected. Liability is only possible from the point in time at which a specific infringement becomes known. Upon becoming aware of such infringements, I will remove this content immediately.",
+        "linkLiabilityTitle": "Liability for links",
+        "linkLiabilityText": "This website contains links to external third-party websites over whose content I have no influence. I therefore cannot accept any liability for this third-party content. The respective provider or operator of the linked pages is always responsible for their content. Upon becoming aware of legal violations, I will remove such links immediately.",
+        "back": "Back to home",
+        "copyrightTitle": "Copyright",
+        "copyrightText": "The content and works created by the site operator on these pages are subject to German copyright law. Reproduction, editing, distribution and any kind of use beyond the limits of copyright law require the written consent of the respective author or creator. Insofar as content on this page was not created by the operator, the copyrights of third parties are respected. Should you nevertheless become aware of a copyright infringement, I ask that you notify me accordingly."
     }
 }

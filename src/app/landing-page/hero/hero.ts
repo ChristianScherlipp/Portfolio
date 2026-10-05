@@ -1,9 +1,9 @@
 import { Component, ElementRef, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, RouterLink],
   selector: 'app-hero',
   styleUrl: './hero.scss',
   templateUrl: './hero.html',

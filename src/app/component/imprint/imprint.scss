@@ -56,3 +56,21 @@
         text-decoration: underline;
     }
 }
+
+.imprint_back {
+    align-self: flex-start;
+    padding: 0.75rem 2rem;
+    font-size: 1.125rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var.$accent-blue;
+    border: 2px solid var.$field-border-color;
+    border-radius: 0.5rem;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+
+    &:hover {
+        border-color: var.$accent-blue;
+        background-color: var.$accent-blue;
+        color: var.$basic-bg-color;
+    }
+}

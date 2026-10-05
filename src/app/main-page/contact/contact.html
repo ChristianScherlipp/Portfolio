@@ -34,7 +34,10 @@
                 <p class="contact-form_error">{{ 'contact.errors.privacy' | translate}}</p>
             }
         </fieldset>
-        <button type="submit" class="contact-form_submit" [disabled]="contactForm.invalid">{{ 'contact.sendButton' | translate}}</button>
+        <button type="submit" class="contact-form_submit" [disabled]="contactForm.invalid || sending()">{{ 'contact.sendButton' | translate}}</button>
+        @if (sendError()) {
+            <p class="contact-form_error">{{ 'contact.errors.send' | translate}}</p>
+        }
         @if (submitted()) {
             <p class="contact-form_success">{{ 'contact.success' | translate}}</p>
         }

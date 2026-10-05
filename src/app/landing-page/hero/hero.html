@@ -12,7 +12,7 @@
             <button class="cta-button" (click)="navigateToContact()">{{ 'hero.talkButton' | translate}}</button>
             <div class="link-icon">
                 <a href="https://github.com/ChristianScherlipp" target="_blank" rel="noopener"><img src="/assets/icons/github.svg" alt="Github Icon"></a>
-                <a href=""><img src="/assets/icons/mail.svg" alt="Email Icon"></a>
+                <a [routerLink]="['/']" fragment="contact"><img src="/assets/icons/mail.svg" alt="Email Icon"></a>
                 <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener"><img src="/assets/icons/linkedin.svg" alt="LinkedIn Icon"></a>
             </div>
         </section>

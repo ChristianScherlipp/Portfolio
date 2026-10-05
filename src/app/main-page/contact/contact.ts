@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, inject, signal } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -10,7 +11,10 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class Contact {
   private fb = inject(NonNullableFormBuilder);
+  private http = inject(HttpClient);
   submitted = signal(false);
+  sending = signal(false);
+  sendError = signal(false);
 
   contactForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
@@ -20,9 +24,23 @@ export class Contact {
   });
 
   onSubmit(): void {
-    console.log(this.contactForm.value)
-    if(this.contactForm.invalid) return;
-    this.submitted.set(true);
-    this.contactForm.reset()
+    if (this.contactForm.invalid || this.sending()) return;
+
+    const {name, email, message} = this.contactForm.getRawValue();
+    this.sending.set(true);
+    this.sendError.set(false);
+    this.submitted.set(false);
+
+    this.http.post<{success: Boolean}>('contact_form_mail.php', {name, email, message}).subscribe({
+      next: () => {
+        this.contactForm.reset();
+        this.submitted.set(true);
+        this.sending.set(false);
+      },
+      error: () => {
+        this.sendError.set(true);
+        this.sending.set(false);
+      },
+    });
   }
 }
