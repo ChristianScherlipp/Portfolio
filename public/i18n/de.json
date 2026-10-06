@@ -130,5 +130,10 @@
         "s10P1": "Diese Website nutzt aus Sicherheitsgründen eine TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie an \"https://\" in der Adresszeile Ihres Browsers.",
         "s11Title": "11. Aktualität und Änderung",
         "s11P1": "Stand: 05.10.2026. Diese Erklärung wird angepasst, wenn sich die Website oder die rechtlichen Anforderungen ändern."
+    },
+    "comingSoon": {
+        "title": "Demnächst verfügbar",
+        "text": "Dieses Projekt wird bald ergänzt. Schau gerne später noch einmal vorbei.",
+        "back": "Zurück zu den Projekten"
     }
 }

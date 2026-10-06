@@ -130,5 +130,10 @@
         "s10P1": "For security reasons, this website uses TLS encryption. You can recognise an encrypted connection by \"https://\" in your browser's address bar.",
         "s11Title": "11. Currency and changes",
         "s11P1": "Status: 05.10.2026. This policy will be updated if the website or the legal requirements change."
+    },
+    "comingSoon": {
+        "title": "Coming soon",
+        "text": "This project will be added soon. Feel free to check back later.",
+        "back": "Back to projects"
     }
 }

@@ -19,8 +19,13 @@
                 </div>
                 <p class="project-info_description">{{'projects.' + project.name + '.description' | translate}}</p>
                 <div class="project-info_buttons">
-                    <a href="{{project.github}}" target="_blank">Github</a>
-                    <a href="{{project.liveDemo}}" target="_blank">Live Demo</a>
+                    @if (project.comingSoon) {
+                        <a routerLink="/coming-soon">Github</a>
+                        <a routerLink="/coming-soon">Live Demo</a>
+                    } @else {
+                        <a href="{{project.github}}" target="_blank">Github</a>
+                        <a href="{{project.liveDemo}}" target="_blank">Live Demo</a>
+                    }
                 </div>
             </section>
             <button class="project-open" type="button" [attr.aria-label]="project.name" (click)="openPopup(project)"></button>
@@ -33,8 +38,13 @@
             <button class="project-popup_close" type="button" aria-label="Close" (click)="closePopup()">&times;</button>
             <h3 class="project-popup_title">{{selectedProject.name}}</h3>
             <div class="project-popup_buttons">
-                <a href="{{selectedProject.github}}" target="_blank" rel="noopener">Github</a>
-                <a href="{{selectedProject.liveDemo}}" target="_blank" rel="noopener">Live Demo</a>
+                @if (selectedProject.comingSoon) {
+                    <a routerLink="/coming-soon" (click)="closePopup()">Github</a>
+                    <a routerLink="/coming-soon" (click)="closePopup()">Live Demo</a>
+                } @else {
+                    <a href="{{selectedProject.github}}" target="_blank" rel="noopener">Github</a>
+                    <a href="{{selectedProject.liveDemo}}" target="_blank" rel="noopener">Live Demo</a>
+                }
             </div>
         </div>
     </section>
