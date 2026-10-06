@@ -28,7 +28,7 @@
         <fieldset class="contact-form_field">
             <label class="contact-form_privacy">
                 <input type="checkbox" formControlName="privacy">
-                <span>{{'contact.privacyPrefix' | translate}} <a href="#">{{ 'contact.privacyLink' | translate }}</a></span>
+                <span>{{'contact.privacyPrefix' | translate}} <a routerLink="/privacy-policy">{{ 'contact.privacyLink' | translate }}</a></span>
             </label>
             @if (contactForm.controls.privacy.touched && contactForm.controls.privacy.invalid) {
                 <p class="contact-form_error">{{ 'contact.errors.privacy' | translate}}</p>
