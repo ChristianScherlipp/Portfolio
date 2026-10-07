@@ -146,6 +146,8 @@
 }
 
 .skill-name {
+    transition: transform 0.25s ease;
+
     @include mix.respond-below(900px) {
         font-size: 0.8125rem;
     }
@@ -156,7 +158,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: transform 0.25s ease;
 }
 
 .skill-frame {
@@ -195,7 +196,7 @@
     mask-repeat: no-repeat;
     -webkit-mask-position: center;
     mask-position: center;
-    transition: background-color 0.25s ease;
+    transition: background-color 0.25s ease, transform 0.25s ease;
 
     @include mix.respond-below(900px) {
         width: 2.5rem;
@@ -231,8 +232,11 @@
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-.skill-icon-wrapper:hover {
-    transform: translateY(-0.5rem);
+.skill-item:hover {
+    .skill-icon,
+    .skill-name {
+        transform: translateY(-0.5rem);
+    }
 
     .skill-tooltip {
         opacity: 1;

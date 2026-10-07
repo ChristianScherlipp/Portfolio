@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, signal } from '@angular/core';
+import { Component, DestroyRef, inject, signal } from '@angular/core';
 import { NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { TranslatePipe } from '@ngx-translate/core';
@@ -13,6 +13,8 @@ import { TranslatePipe } from '@ngx-translate/core';
 export class Contact {
   private fb = inject(NonNullableFormBuilder);
   private http = inject(HttpClient);
+  private statusTimer?: ReturnType<typeof setTimeout>;
+  private readonly statusDurationMs = 5000;
   submitted = signal(false);
   sending = signal(false);
   sendError = signal(false);
@@ -24,10 +26,24 @@ export class Contact {
     privacy: [false, Validators.requiredTrue]
   });
 
+  constructor() {
+    inject(DestroyRef).onDestroy(() => clearTimeout(this.statusTimer));
+  }
+
+  // Erfolgs- oder Fehlermeldung nach kurzer Zeit wieder ausblenden
+  private hideStatusLater(): void {
+    clearTimeout(this.statusTimer);
+    this.statusTimer = setTimeout(() => {
+      this.submitted.set(false);
+      this.sendError.set(false);
+    }, this.statusDurationMs);
+  }
+
   onSubmit(): void {
     if (this.contactForm.invalid || this.sending()) return;
 
     const {name, email, message} = this.contactForm.getRawValue();
+    clearTimeout(this.statusTimer);
     this.sending.set(true);
     this.sendError.set(false);
     this.submitted.set(false);
@@ -37,10 +53,12 @@ export class Contact {
         this.contactForm.reset();
         this.submitted.set(true);
         this.sending.set(false);
+        this.hideStatusLater();
       },
       error: () => {
         this.sendError.set(true);
         this.sending.set(false);
+        this.hideStatusLater();
       },
     });
   }

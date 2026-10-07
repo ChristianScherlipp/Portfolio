@@ -114,9 +114,14 @@
     margin-top: 1rem;
 }
 
-.main-aboutme_content > button {
+.main-aboutme_content > .about-me_download {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 12.875rem;
     height: 3rem;
+    text-decoration: none;
     font-size: 1.5rem;
     color: var.$accent-sand;
     border: 2px solid var.$accent-sand;
@@ -134,6 +139,30 @@
         color: var.$basic-bg-color;
         transform: translateY(-2px);
     }
+}
+
+.about-me_tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translate(-50%, 4px);
+    margin-bottom: 0.75rem;
+    padding: 0.4rem 0.8rem;
+    white-space: nowrap;
+    font-size: 1rem;
+    color: var.$text-color;
+    background-color: var.$basic-bg-color;
+    border: 1px solid var.$field-border-color;
+    border-radius: 0.375rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.about-me_download:hover .about-me_tooltip,
+.about-me_download:focus-visible .about-me_tooltip {
+    opacity: 1;
+    transform: translate(-50%, 0);
 }
 
 .info-line {

@@ -4,12 +4,11 @@
     <h2>{{'aboutMe.title_part_one' | translate}} <span>{{'aboutMe.title_part_two' | translate}}</span></h2>
     <article>
         <p>{{ 'aboutMe.firstTagLine' | translate}}</p>
-        @if (showMore) {
-            <p class="about-me_more" #pathRef>{{'aboutMe.pathTagLine' | translate}}</p>
-            <p class="about-me_more">{{'aboutMe.hobbyTagLine' | translate}}</p>
-        }
     </article>
-    <button (click)="revealMore()">{{ 'aboutMe.moreAboutMeButton' | translate}}</button>
+    <a class="about-me_download" href="assets/documents/Lebenslauf_C.Scherlipp.pdf" download="Lebenslauf_C.Scherlipp.pdf">
+        {{ 'aboutMe.moreAboutMeButton' | translate}}
+        <span class="about-me_tooltip" aria-hidden="true">{{ 'aboutMe.downloadCv' | translate}}</span>
+    </a>
 </section>
 <section class="main-aboutme main-aboutme_info">
     <section class="info-line" >

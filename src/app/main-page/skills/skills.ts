@@ -16,7 +16,6 @@ export class Skills {
     {name: 'Git', icon: 'git', learned: true},
     {name: 'HTML', icon: 'html5', learned: true},
     {name: 'JavaScript', icon: 'javascript', learned: true},
-    {name: 'Material Design', icon: 'material-design', learned: false},
     {name: 'Php', icon: 'php', learned: false},
     {name: 'Python', icon: 'python', learned: false},
     {name: 'REST-API', icon: 'rest-api', learned: false},

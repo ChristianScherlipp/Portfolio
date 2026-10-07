@@ -1,3 +1,24 @@
+@font-face {
+    font-family: 'EB Garamond';
+    src: url('/assets/fonts/EBGaramond-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Playfair Display';
+    src: url('/assets/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     background-color: #0d1827;
+    font-family: 'Playfair Display', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'EB Garamond', serif;
 }

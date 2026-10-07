@@ -20,7 +20,10 @@
             <path d="M 520 650 A 440 390 0 0 1 960 260" />
         </svg>
         <section class="hero-image">
-            <img src="/assets/img/chris.webp" alt="Bild von Christian Scherlipp">
+            <div class="hero-image_frame">
+                <img src="/assets/img/chris.webp" alt="Bild von Christian Scherlipp">
+                <span class="hero-image_tooltip" aria-hidden="true">{{ 'hero.imageAiNotice' | translate}}</span>
+            </div>
         </section>
         <button class="scroll-indicator" type="button" (click)="scrollToNext()">
             <span class="scroll-indicator_line"></span>
