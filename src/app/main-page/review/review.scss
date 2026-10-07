@@ -31,7 +31,7 @@
     position: relative;
     width: 100%;
     max-width: 1200px;
-    height: 24rem;
+    height: 35rem;
     overflow: hidden;
     mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
     -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
@@ -49,6 +49,8 @@
 }
 
 .review-card {
+    width: 40rem;
+    height: 25rem;
     display: none;
     position: absolute;
     top: 50%;
@@ -63,8 +65,8 @@
     &--active {
         display: flex;
         z-index: 3;
-        width: 34rem;
-        min-height: 16rem;
+        width: 40rem;
+        min-height: 20rem;
         background-color: var.$card-header-color;
         border: 2px solid var.$accent-blue;
         transform: translate(-50%, -50%);
@@ -84,7 +86,7 @@
     &--next {
         display: flex;
         z-index: 1;
-        width: 24rem;
+        width: 40rem;
         min-height: 14rem;
         background-color: var.$field-bg-color;
         border: 2px solid var.$field-border-color;
@@ -96,11 +98,11 @@
     }
 
     &--prev {
-        transform: translate(calc(-50% - 30rem), -50%) scale(0.88);
+        transform: translate(calc(-80% - 30rem), -50%) scale(0.88);
     }
 
     &--next {
-        transform: translate(calc(-50% + 30rem), -50%) scale(0.88);
+        transform: translate(calc(-20% + 30rem), -50%) scale(0.88);
     }
 }
 
@@ -120,8 +122,7 @@
 
 .review-card_text {
     font-size: 1.15rem;
-    line-height: 1.5;
-    margin-top: 1.5rem;
+    line-height: 1.25;
 
     @include mix.respond-below(900px) {
         font-size: 1rem;
