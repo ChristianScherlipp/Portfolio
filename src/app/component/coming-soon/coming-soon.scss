@@ -19,10 +19,17 @@
     }
 }
 
+.coming-soon_images {
+    width: mix.fluid(140, 280);
+    max-width: 100%;
+    height: auto;
+}
+
 .coming-soon_title {
     font-size: 3.3125rem;
     font-weight: 700;
     color: var.$accent-blue;
+    overflow-wrap: anywhere;
 
     @include mix.respond-below(900px) {
         font-size: mix.fluid(32, 53);
@@ -31,16 +38,15 @@
 
 .coming-soon_text {
     max-width: 40rem;
-    font-size: 1.3125rem;
+    font-size: mix.fluid(16, 21);
     line-height: 1.5;
-
-    @include mix.respond-below(900px) {
-        font-size: 1rem;
-    }
 }
 
 .coming-soon_back {
-    padding: 0.75rem 2rem;
+    max-width: 100%;
+    padding: 0.75rem mix.fluid(16, 32);
+    cursor: pointer;
+    text-align: center;
     font-size: 1.125rem;
     font-weight: 600;
     text-decoration: none;

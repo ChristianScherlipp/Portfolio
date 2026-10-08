@@ -5,3 +5,11 @@
     scroll-behavior: smooth;
 }
 
+html {
+    scroll-padding-top: 6rem;
+
+    @media (max-width: 900px) {
+        scroll-padding-top: 5rem;
+    }
+}
+
