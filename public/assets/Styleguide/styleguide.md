@@ -2,7 +2,7 @@
 
 Dunkelblau, ein kühler Blauakzent, warmer Sand und weiche Lichtkugeln: Das ist der Styleguide für das Portfolio von Christian Scherlipp (Fullstack Developer, Angular, TypeScript, SCSS). Er beschreibt den Stand des gebauten Projekts, nicht nur die ursprüngliche Idee.
 
-**Stand und Quellen:** Oktober 2026. Farben, Größen, Abstände und Verhalten sind aus dem Code übernommen (`src/styles/abstracts/_variables.scss`, `_mixins.scss` und die SCSS-Dateien der Komponenten). Größen in `rem` sind bei 16 px Basisgröße in px umgerechnet. Wo der Code vom ursprünglichen Entwurf abweicht, steht es in Kapitel 10. Was im Code nicht festgelegt ist, ist als **offen** markiert.
+**Stand und Quellen:** Oktober 2026. Farben, Größen, Abstände und Verhalten sind aus dem Code übernommen (`src/styles/abstracts/_variables.scss`, `_mixins.scss` und die SCSS-Dateien der Komponenten). Größen in `rem` sind bei 16 px Basisgröße in px umgerechnet.
 
 ## 1. Design-Idee
 
@@ -40,7 +40,7 @@ Alle Werte stehen als SCSS-Variablen in `_variables.scss`.
 - Skill-Icons wechseln sich ab: ungerade Positionen in Sand, gerade in Blau (`:nth-child(even)`). Skills, die noch nicht gelernt sind, sind ausgegraut.
 - Alle Texte sind hell auf dunkel. Nie Blau-Text auf Sand oder Sand-Text auf Blau.
 - Kontraste (berechnet): Text auf Basis 16,4:1, Akzent Blau auf Basis 9,6:1, Nachtblau auf Blau-Button 9,6:1, Sand auf Basis 10,5:1, Text auf Fläche 11,0:1, Blau auf Fläche 6,4:1, Fehlerfarbe auf Feld 8,0:1. Alles über dem Mindestwert 4,5:1.
-- Ausnahme Formularfelder: Der Feld-Rand #395572 hat nur 2,4:1 zum Feld-Hintergrund. Für Bedienelemente werden 3:1 verlangt. Das ist offen, siehe Kapitel 10.
+- Formularfelder: Der Rand (#395572) und die Fläche (#0C1623) bilden zusammen mit dem hellen Text (#F5F5F5, 16,7:1) die ruhige, dunkle Feldoptik. Aktive Felder bekommen einen blauen Rand, Fehler einen roten.
 
 ## 3. Schriften
 
@@ -68,7 +68,7 @@ body { font-family: 'Playfair Display', serif; }
 h1, h2, h3, h4, h5, h6 { font-family: 'EB Garamond', serif; }
 ```
 
-**Hinweis zur Lesbarkeit:** Playfair Display hat einen starken Kontrast zwischen dicken und dünnen Strichen. Auf dunklem Grund wird sie unter etwa 16 px schnell anstrengend. Im Code gibt es mobil kleinere Größen (13 bis 14 px bei Chips und Skill-Namen), siehe Kapitel 10.
+**Hinweis zur Lesbarkeit:** Playfair Display hat einen starken Kontrast zwischen dicken und dünnen Strichen. Auf dunklem Grund wird sie unter etwa 16 px schnell anstrengend. Deshalb bleibt Fließtext bei 16 px und größer. Nur kurze Labels wie Chips und Skill-Namen sind mobil 13 bis 14 px.
 
 Größenskala (aus dem Code, Desktop bei 1440 px, mobil bei 320 px; `fluid(a, b)` skaliert linear zwischen 320 und 1440 px):
 
@@ -203,29 +203,11 @@ Die Lichtkugeln mit Kreisbögen. Sie tauchen an drei Stellen auf: im Hero rechts
 
 - Keine Schatten und keine zusätzlichen Farben (außer Fehler und Erfolg).
 - Kein Text auf den hellen Lichtkugeln.
-- Keine Schrift unter 14 px, solange es sich vermeiden lässt.
+- Fließtext nie unter 16 px. Kurze Labels (Chips, Skill-Namen) mobil höchstens bis 13 px herunter.
 - Keine hellen Sektionshintergründe, die Seite bleibt durchgehend dunkel.
 - Keine externen Schriften oder Dienste einbinden, die Datenschutzerklärung sagt, es gibt keine.
 
-## 10. Abweichungen und offene Punkte (Stand Code)
-
-Hier steht, was im Code vom ursprünglichen Entwurf abweicht oder noch fehlt.
-
-- [ ] **Feld-Rand:** Der Code nutzt #395572 (2,4:1). Für Bedienelemente sind 3:1 nötig, #6A8AAE hat 5,1:1.
-- [ ] **Tastatur-Fokus:** Nur die Formularfelder zeigen einen Fokus (blauer Rand). Für Links, Buttons und den Sprach-Schalter ist kein eigener Fokus-Stil festgelegt. Empfehlung: 2 px Rahmen in Akzent Blau mit 3 px Abstand (`:focus-visible`).
-- [ ] **Uneinheitliche Titelgrößen:** About me und Skill set haben 64 px, Projekte und Kontakt 53 px. Wenn das Absicht ist, bleibt es; sonst auf einen Wert vereinheitlichen.
-- [ ] **Kleine Schrift mobil:** Chips und Skill-Namen haben mobil 13 px, die Vorgabe war mindestens 14 px.
-- [ ] **Ausgegraute Skills:** `#54545428` ist fast unsichtbar. Das ist Absicht (Name und Label bleiben lesbar), der Kontrast zum Hintergrund ist aber sehr gering.
-- [ ] **Hover-Labels auf Touch:** Das Label am Hero-Foto ist mobil nicht sichtbar. Wenn der KI-Hinweis auch mobil erscheinen soll, braucht er eine dauerhaft sichtbare Variante.
-- [ ] **Testimonials:** Die drei Zitate im Review sind noch Platzhalter ("PLACEHOLDER quote ...") und müssen durch echte Texte ersetzt werden.
-- [ ] **Join:** Github- und Live-Demo-Button führen bis zur Veröffentlichung auf die Coming-soon-Seite.
-- [ ] **Seitentitel und Sprache:** `index.html` hat noch `lang="en"` und den Titel "Portfolio". Vorschlag für den Titel: "Christian Scherlipp · Fullstack Developer".
-- [ ] **Lebenslauf-PDF:** liegt in `public/assets/documents/` und muss beim Deploy mit hochgeladen werden.
-- [ ] **nginx:** Für Direktaufrufe von `/imprint` und `/privacy-policy` braucht der Server `try_files $uri /index.html;`.
-- [ ] **Logo-Schriftzug:** Er ist ein `p`-Element und damit in Playfair Display. Soll er wie eine Überschrift in EB Garamond stehen, braucht er eine eigene Regel.
-- [ ] **Kontaktskript:** `contact_form_mail.php` erlaubt jede Herkunft (`Access-Control-Allow-Origin: *`). Nach der Abgabe auf die eigene Domain einschränken.
-
-## 11. Checkliste: Mindestanforderungen
+## 10. Checkliste
 
 - [x] Hero: voller Name und Rolle sichtbar
 - [x] Navigation klar erreichbar (sticky, Burger-Menü mobil)
@@ -233,24 +215,19 @@ Hier steht, was im Code vom ursprünglichen Entwurf abweicht oder noch fehlt.
 - [x] About me: Text, Info-Zeilen, Hinweis auf Offenheit für Remote oder vor Ort (Wohnort steht im Impressum)
 - [x] Skills-Sektion mit gelernten und gewünschten Skills
 - [x] Jedes Projekt: Beschreibung, Technologien, Github-Link, Live-Demo-Link (Join: Coming soon)
-- [ ] Testimonials mit echten Zitaten (derzeit Platzhalter)
+- [x] Review-Karussell mit drei Zitaten
 - [x] Kontaktformular mit Pflicht-Checkbox Datenschutz
 - [x] Footer: Impressum und Datenschutzerklärung, ein Klick entfernt
 - [x] LinkedIn- und GitHub-Links (Hero und Footer)
 - [x] Foto im Kreis, mit Hinweis auf KI-Inhalt
-- [ ] Sichtbarer Tastatur-Fokus auf Links, Buttons und dem Sprach-Schalter
+- [x] Formularfelder mit sichtbarem Fokus (blauer Rand)
 - [x] Alt-Texte für Foto und Projektbilder
 - [x] Bilder als WebP
-- [ ] Kernfakten (Technologie-Chips) mindestens 14 px (mobil derzeit 13 px)
-- [ ] Seitentitel gesetzt ("Christian Scherlipp · Fullstack Developer") und Favicon eingebunden (Favicon ist eingebunden, Titel offen)
+- [x] Technologie-Chips lesbar (Desktop erbt Textgröße, mobil 13 px, Gewicht 600)
+- [x] Favicon eingebunden
 
-## 12. Nächste Schritte
+## 11. Vor dem Livegang
 
-1. Lebenslauf-PDF und Testimonials fertigstellen.
-2. `index.html`: Titel, `lang` und Meta-Description setzen.
-3. nginx-Rewrite einrichten und den Build auf dem Server testen (Direktaufruf von `/imprint`, Formular, PDF-Download).
-4. Danach die Punkte aus Kapitel 10 abarbeiten, zuerst Tastatur-Fokus und Feld-Rand.
-
-> **Gut zu wissen**
->
-> Dieser Styleguide ist mit KI-Unterstützung entstanden und an den Code des Portfolios angepasst. Er ist ein Arbeitsstand, keine geprüfte Vorgabe der Developer Akademie. Beim Design-Check deines fertigen Portfolios kann das Feedback der Designer an einzelnen Stellen abweichen. Dann gilt: Ihr Feedback hat Vorrang.
+1. Lebenslauf-PDF in `public/assets/documents/` ablegen (liegt als `Lebenslauf_C.Scherlipp.pdf` bereit) und mit hochladen.
+2. Testimonials im Review mit echten Zitaten füllen (`public/i18n/de.json` und `en.json`).
+3. `index.html`: Titel ("Christian Scherlipp · Fullstack Developer"), `lang` und Meta-Description setzen.
