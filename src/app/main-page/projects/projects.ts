@@ -22,7 +22,7 @@ export class Projects {
   projects: Project[] = [
     {name: "join", techStacks: ['CSS', 'HTML', 'Firebase', 'Angular', 'TypeScript'], github: '#', liveDemo: '#', comingSoon: true},
     {name: "sharkie", techStacks: ['JavaScript', 'CSS', 'HTML'], github: 'https://github.com/ChristianScherlipp/Sharkie', liveDemo: 'https://christianscherlipp.developerakademie.net/Sharkie/index.html'},
-    {name: "pokedex", techStacks: ['HTML', 'CSS', 'JavaScript', 'PokeAPI'], github: 'https://github.com/ChristianScherlipp/Pokedex', liveDemo: 'https://christianscherlipp.developerakademie.net/Pokedex/index.html'}
+    {name: "pokedex", techStacks: ['HTML', 'CSS', 'JavaScript', 'PokeAPI'], github: 'https://github.com/ChristianScherlipp/Pokedex', liveDemo: 'https://pokedex.christian-scherlipp.de/'}
   ]
 
   openPopup(project: Project): void {
