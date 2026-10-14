@@ -12,7 +12,7 @@ header("Content-Type: application/json; charset=utf-8");
 // ------------------------------------------------------------
 
 // >>> DEINE EMAIL HIER EINTRAGEN <<<
-$siteEmail = "c.scherlipp@web.de";
+$siteEmail = "chris@mail.christian-scherlipp.de";
 
 switch ($_SERVER['REQUEST_METHOD']) {
 
@@ -50,8 +50,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $safeMessage = nl2br(htmlspecialchars($userMessage, ENT_QUOTES, 'UTF-8'));
 
         // Empfängeradresse (nutzt die oben definierte Mail)
-        $recipient = $siteEmail; 
-        $subject = 'Website Contact Form';
+        $recipient = "c.scherlipp@web.de"; 
+        $subject = 'christian-scherlipp.de Contact Form';
 
         $mailBody = "
             <strong>Name:</strong> {$safeName}<br>
