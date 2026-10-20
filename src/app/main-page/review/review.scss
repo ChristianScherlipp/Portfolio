@@ -10,6 +10,8 @@
     padding: 4rem 0 5rem;
 
     @include mix.respond-below(900px) {
+        height: 48rem;
+        justify-content: space-between;
         gap: 1.5rem;
         padding: 3rem 0;
     }
@@ -22,6 +24,7 @@
     color: var.$accent-blue;
 
     @include mix.respond-below(900px) {
+        
         padding-inline: 1.5rem;
         font-size: mix.fluid(24, 36);
     }
@@ -77,6 +80,8 @@
             left: auto;
             width: 100%;
             max-width: 34rem;
+            height: auto;
+            min-height: 25rem;
             padding: 2rem 1.25rem 1.5rem;
             transform: none;
         }
@@ -126,6 +131,8 @@
 
     @include mix.respond-below(900px) {
         font-size: 1rem;
+        line-height: 1.4;
+        overflow-wrap: anywhere;
         margin-top: 1.25rem;
     }
 }

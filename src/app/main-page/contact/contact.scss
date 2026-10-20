@@ -182,11 +182,14 @@
 }
 
 .contact-form_submit {
-    width: 12.875rem;
-    height: 3.125rem;
+    min-width: 12.875rem;
+    min-height: 3.125rem;
+    padding: 0.5rem 1.5rem;
     align-self: flex-start;
     font-size: 1.5rem;
     font-weight: 600;
+    line-height: 1.2;
+    white-space: nowrap;
     color: var.$basic-bg-color;
     background-color: var.$accent-blue;
     border: none;
@@ -201,5 +204,11 @@
     &:disabled {
         opacity: 0.4;
         cursor: not-allowed;
+    }
+
+    @include mix.respond-below(900px) {
+        width: 100%;
+        align-self: stretch;
+        font-size: mix.fluid(18, 24);
     }
 }
