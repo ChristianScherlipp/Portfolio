@@ -38,10 +38,11 @@
 
     // Mobil: nur die aktive Karte, in den Fluss gesetzt, damit nichts abgeschnitten wird
     @include mix.respond-below(900px) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        align-items: stretch;
+        height: 40rem;
         padding: 2rem 1.5rem 0;
         mask-image: none;
         -webkit-mask-image: none;
@@ -50,7 +51,7 @@
 
 .review-card {
     width: 40rem;
-    height: 25rem;
+    height: 30rem;
     display: none;
     position: absolute;
     top: 50%;
@@ -61,6 +62,21 @@
     border-radius: 1.5rem;
     text-align: left;
     transition: transform 0.3s ease, opacity 0.3s ease;
+
+    @include mix.respond-below(900px) {
+        display: flex;
+        grid-area: 1 / 1;
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 100%;
+        max-width: 34rem;
+        height: 35rem;
+        padding: 2rem 1.25rem 1.5rem;
+        transform: none;
+        visibility: hidden;
+        opacity: 0;
+    }
 
     &--active {
         display: flex;
@@ -77,9 +93,11 @@
             left: auto;
             width: 100%;
             max-width: 34rem;
-            height: 30rem;
+            height: auto;
             padding: 2rem 1.25rem 1.5rem;
             transform: none;
+            visibility: visible;
+            opacity: 1;
         }
     }
 
